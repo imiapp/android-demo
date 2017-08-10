@@ -66,8 +66,8 @@ public class ReservationActivity extends Activity implements CreateChannelServic
     public void testThirdAccredit() {
 
 //        scope = Constants.TYPE_THIRD_LOGIN;
-        scope = Constants.TYPE_THIRD_ACCREDIT_IDCARD;
-//        scope = Constants.TYPE_THIRD_LOGIN + "," + Constants.TYPE_THIRD_ACCREDIT_IDCARD;
+//        scope = Constants.TYPE_THIRD_ACCREDIT_IDCARD;
+        scope = Constants.TYPE_THIRD_LOGIN + "," + Constants.TYPE_THIRD_ACCREDIT_IDCARD;
 
         NetWorkRequest.createChannel(this, version, scope, new AsyncHttpResponseHandler() {
             @Override
@@ -103,7 +103,7 @@ public class ReservationActivity extends Activity implements CreateChannelServic
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            NetWorkRequest.getAuthorizationInfo(this, topicId, Constants.TYPE_THIRD_ACCREDIT_IDCARD, new AsyncHttpResponseHandler() {
+            NetWorkRequest.getAuthorizationInfo(this, topicId, scope, new AsyncHttpResponseHandler() {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                     String response = new String(responseBody);

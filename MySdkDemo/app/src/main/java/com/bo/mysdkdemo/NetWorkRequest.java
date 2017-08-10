@@ -18,10 +18,10 @@ public class NetWorkRequest {
 
     public static final String SCHEME = "http://";
     //测试环境
-//    public static String HOST = "172.16.192.101:9100/";
+//    public static String HOST = "test.service.azurenet.cn:9100/";
 
     //正式环境
-    public static String HOST = "172.16.192.101:9110/";
+    public static String HOST = "test.service.azurenet.cn:9110/";
 
     public final static String BASE_URL = SCHEME + HOST;
     public static final String WEB_SERVER = BASE_URL + "imi/";
